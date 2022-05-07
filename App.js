@@ -3,6 +3,7 @@ import {View, ScrollView, StyleSheet, Text, Alert, TouchableOpacity, Image} from
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Camera } from 'expo-camera';
+import ImageInside from "./Image" 
 
   //functions called after pressing buttons
 
@@ -312,23 +313,12 @@ import { Camera } from 'expo-camera';
         marginBottom:210
       },
 
-      imagecontainer: {
-        display: "flex",
-        flexWrap: "wrap",
-        flexDirection: "row",
-        width:"100%"
-      },
+      
 
-      imagecontained: {
-        width:"30.6%",
-        margin:"1.3%",
-        height:120,
-        backgroundColor: "black",
-        borderRadius:5,
-      }
     });
 
     //elements of the page
+    
     
     return (
 
@@ -338,27 +328,9 @@ import { Camera } from 'expo-camera';
         </View>
 
         <ScrollView style={styles.body}>
-          <View style={styles.imagecontainer}>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-            <Image style={styles.imagecontained}></Image>
-          </View>
+          
+            <ImageInside/>
+          
         </ScrollView>
 
         <View style={styles.footer}>
