@@ -129,7 +129,7 @@ import ImageInside from "./Image"
         // représentent ce qu'il aurait été possible de faire si la base de donnée avait été
         // accessible
 
-        //formdata.append("urls_text", "\"salut\"");
+        //formdata.append("urls_text", "\"url de l'image envoyée précédemment"");
         //fetch("https://ThisIsMyDatabaseUrl/urls", requestOptions)
         
         //.then(response => response.text())
