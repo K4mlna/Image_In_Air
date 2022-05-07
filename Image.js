@@ -9,6 +9,9 @@ const database = [
 , 'https://preview.redd.it/6t17t4u5ay621.jpg?auto=webp&s=0038ad64f02839b1ef61a059ffbd33722d5cb492'
 , 'https://preview.redd.it/qr28pmbp4vf31.jpg?auto=webp&s=f26d76340603d671ba1d79b89b22cdd92216a729'
 , 'https://th.bing.com/th/id/R.384e7201ab565da193a9534f17b5f040?rik=xS9yvqg53kiD%2fA&riu=http%3a%2f%2ffilmvf.info%2fwp-content%2fuploads%2f2020%2f02%2fSonic-The-Hedgehog-Box-Office-Second-Weekend.jpg&ehk=OUCQ4zFUmhCc4KQHdleNlm%2bjuw8sncw7AQU5pJvYnmg%3d&risl=&pid=ImgRaw&r=0'
+, "https://i.jeuxactus.com/datas/jeux/s/o/sonic-the-hedgehog/xl/sonic-the-hedgehog-4e261104a999c.jpg"
+, 'https://preview.redd.it/6t17t4u5ay621.jpg?auto=webp&s=0038ad64f02839b1ef61a059ffbd33722d5cb492'
+
 ]
 class ImageInside extends React.Component {
 

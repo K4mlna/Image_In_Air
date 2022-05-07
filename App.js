@@ -5,17 +5,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Camera } from 'expo-camera';
 import ImageInside from "./Image" 
 
-  //functions called after pressing buttons
+  
 
   function ArrivalScreen({navigation}) {
 
-    //change page
+    //prend effet lorsque le seul bouton de la page est pressé
 
     const ToHome = () => {
       navigation.navigate('Home')
     }
-
-    //stylesheet
 
     const styles = StyleSheet.create({
 
@@ -105,6 +103,8 @@ import ImageInside from "./Image"
         const data = await camera.takePictureAsync({quality: 0, base64: true, skipProcessing: true})
         const imagevariable=data.base64
 
+        //requête imgbb
+
         var formdata = new FormData();
         formdata.append("image", imagevariable)
 
@@ -113,17 +113,32 @@ import ImageInside from "./Image"
           body: formdata,
           redirect: 'follow'
         };
-        
+
         fetch("https://api.imgbb.com/1/upload?key=7b720df271257e940a556f40932bc99d", requestOptions)
         .then(response => response.json())
-        .then(result => result.data.image.url)
+        .then(result => (result.data.image.url))
         .catch(error => console.log('error', error));
+
+        // Il faut remplacer l'url ci dessous par celui de la base de donnée Django. Malheureusement,
+        // nous n'avons pas de nom de domaine y étant associé.Il n'est pas possible non plus
+        // d'envoyer les données via localhost, car ce code s'exécute sur l'application et non
+        // sur l'ordinateur depuis lequel le code est écrit. Ce problème n'aurait pas de raison
+        // d'être dans un contexte de déploiement réel de l'application, mais il nous empêche de
+        // vous montrer comment notre base de donnée récupère les liens des images et comment
+        // nous les réutilisons sur notre application mobile. Les lignes de code ci-dessous
+        // représentent ce qu'il aurait été possible de faire si la base de donnée avait été
+        // accessible
+
+        //formdata.append("urls_text", "\"salut\"");
+        //fetch("https://ThisIsMyDatabaseUrl/urls", requestOptions)
         
-        
+        //.then(response => response.text())
+        //.then(result => console.log(result))
+        //.catch(error => console.log('error', error));
 
         Alert.alert(
           "Congratulations",
-          'Your image will get uploaded on our servers very soon',
+          'Your image will get uploaded on our servers very soon. Please visit https://digimo.imgbb.com/ if you want to check the images sent by our fellow users',
           [{ text: "Hooray !", onPress: () => navigation.navigate('Home')}]
         )
           
